@@ -1,0 +1,64 @@
+<h2 class="content-block">Funcionalidades-Tareas</h2>
+
+
+
+<div class="content-block">
+    <div class="dx-card responsive-paddings">
+        <div id="data-grid-demo">
+
+            <div class="options">
+
+                <div class="option">
+                  <label>Proyecto</label>
+                  <dx-select-box
+                        [showClearButton]="true" 
+                        [dataSource]="proyectos"
+                        displayExpr="nombre"
+                        valueExpr="id"
+                        placeholder="Proyecto"
+                        (onValueChanged)="onValueChangedProyecto($event)"
+                      ></dx-select-box>
+                </div>
+
+                <div class="option">
+                    <label>Modulo</label>
+                    <dx-select-box
+                        [showClearButton]="true" 
+                        [dataSource]="modulosByIdProyecto"
+                        displayExpr="nombre"
+                        valueExpr="id"
+                        placeholder="Modulo"
+                        (onValueChanged)="onValueChangedModulo($event)"
+                    ></dx-select-box>
+                </div>
+
+                <div class="option">
+                    <label>Funcionalidades</label>
+                    <dx-select-box
+                        [showClearButton]="true" 
+                        [dataSource]="funcionalidadByIdModulo"
+                        displayExpr="nombre"
+                        valueExpr="id"
+                        placeholder="Funcionalidad"
+                        (onValueChanged)="onValueChangedFuncionalidad($event)"
+                    ></dx-select-box>
+                </div>
+
+              </div>
+
+              <div class="grid">
+                <div class="grid-container">
+                    <app-grid [datos]="funcTareasByIdFuncionalidad" 
+                              [columnas]="columnas"
+                              [model]="funcionalidadTarea"
+                              (emitInsertData)="logInsertEvent( $event )" 
+                              (emitDeleteData)="logRemovingEvent( $event )"
+                              (emitUpdateData)="logUpdatingEvent( $event )">
+                     </app-grid>
+                </div>
+              </div>
+
+
+        </div>
+    </div>
+</div>

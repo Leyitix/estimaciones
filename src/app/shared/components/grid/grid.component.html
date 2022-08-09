@@ -1,0 +1,45 @@
+<dx-data-grid  #grid 
+                id="gridContainer" 
+                keyExpr="id" 
+                [dataSource]="datos" 
+                [showBorders]="true" 
+                [showRowLines]="true"
+                [rowAlternationEnabled]="true" 
+                [columns]="columnas" 
+                [columnAutoWidth]="true" 
+                [columnHidingEnabled]="true"
+                (onEditorPreparing)="onEditorPreparing($event)" 
+                (onRowInserting)="emitInsertEvent($event.data)"
+                (onRowRemoving)="emitRemovingEvent($event.data)" 
+                (onRowUpdating)="onRowUpdating($event)">
+
+    <dxo-load-panel [enabled]="true"></dxo-load-panel>
+
+    <dxo-paging [pageSize]="10"></dxo-paging>
+
+    <dxo-pager [showPageSizeSelector]="true" 
+               [showInfo]="true" 
+               infoText="Página {0} de {1} ({2} registros)">
+    </dxo-pager>
+
+    <dxo-filter-row [visible]="showFilterRow" 
+                    [applyFilter]="currentFilter"
+                    [operationDescriptions]="operationDescriptions" 
+                    [resetOperationText]="'Reestablecer'" 
+                    showAllText="(Todos)">
+    </dxo-filter-row>
+
+    <dxo-editing mode="form" 
+                [allowUpdating]="true" 
+                [allowAdding]="true" 
+                [allowDeleting]="true">
+        <dxo-texts saveRowChanges="Guardar" 
+                   cancelRowChanges="Cancelar" 
+                   addRow="Añadir" 
+                   editRow="Editar"
+                   deleteRow="Eliminar" 
+                   confirmDeleteMessage="¿Estás seguro que deseas eliminar?">
+        </dxo-texts>
+    </dxo-editing>
+
+</dx-data-grid>

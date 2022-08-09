@@ -1,0 +1,169 @@
+<link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/22.1.3/css/dx-gantt.min.css">
+<script src="https://cdn3.devexpress.com/jslib/22.1.3/js/dx-gantt.min.js"></script>
+
+
+
+<div class="content-block">
+  <div class="dx-card responsive-paddings">
+    <div id="data-grid-demo">
+
+      <div class="dx-fieldset">
+        <div class="dx-field">
+          <div class="dx-field-label">Selecciona el proyecto que quieres visualizar</div>
+          <div class="dx-field-value">
+
+            <dx-drop-down-box [(value)]="gridBoxValue" valueExpr="id" displayExpr="nombre" placeholder="Select..."
+              [showClearButton]="true" [dataSource]="proyectos" (onValueChanged)="onValueChanged($event)">
+
+              <div *dxTemplate="let data of 'content'">
+                <dx-data-grid [dataSource]="proyectos" [columns]="columnas" [selection]="{ mode: 'single' }"
+                  [hoverStateEnabled]="true" [paging]="{ enabled: true, pageSize: 10 }" [filterRow]="{ visible: true }"
+                  [scrolling]="{ mode: 'virtual' }" [height]="345" [(selectedRowKeys)]="gridBoxValue">
+                </dx-data-grid>
+              </div>
+            </dx-drop-down-box>
+
+          </div>
+        </div>
+      </div>
+
+
+      <!-- option toolbar -->
+      <div id="container">
+        <div class="options">
+          <div class="caption">Opciones</div>
+          <div class="column">
+
+            <div class="option">
+              <div class="label">Tipo de escala:</div>
+              <div class="value">
+                <dx-select-box [items]="[
+                      'auto',
+                      'minutes',
+                      'hours',
+                      'days',
+                      'weeks',
+                      'months',
+                      'quarters',
+                      'years'
+                    ]" [(value)]="scaleType">
+                </dx-select-box>
+              </div>
+            </div>
+
+            <div class="option">
+              <div class="label">Horas totales del proyecto:</div>
+              <div class="value">
+                <div class="dx-field-value">
+                  <dx-number-box [value]="dataTotalHoras" [readOnly]="true"></dx-number-box>
+                </div>
+              </div>
+            </div>
+
+            <div class="option">
+              <div class="label">Jornadas totales:</div>
+              <div class="value">
+                <div class="dx-field-value">
+                  <dx-number-box [value]="totalJornadas" [readOnly]="true"></dx-number-box>
+                </div>
+              </div>
+            </div>
+
+            <div class="option">
+              <div class="label">Nº de Sprints:</div>
+              <div class="value">
+                <div class="dx-field-value">
+                  <dx-number-box [value]="numSprints" [readOnly]="true"></dx-number-box>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="column">
+
+            <div class="option">
+              <div class="label">Nº de Recursos Overview:</div>
+              <div class="value">
+                <div class="dx-field-value">
+                  <dx-number-box [value]="numRecursosOverview" [readOnly]="true"></dx-number-box>
+                </div>
+              </div>
+            </div>
+
+            <div class="option">
+              <div class="label">Nº de Recursos Analisis:</div>
+              <div class="value">
+                <div class="dx-field-value">
+                  <dx-number-box [value]="numRecursosAnalisis" [readOnly]="true"></dx-number-box>
+                </div>
+              </div>
+            </div>
+
+            <div class="option">
+              <div class="label">Nº de Recursos Desarrollo:</div>
+              <div class="value">
+                <div class="dx-field-value">
+                  <dx-number-box [value]="numRecursosDesarrollo" [readOnly]="true"></dx-number-box>
+                </div>
+              </div>
+            </div>
+
+            <div class="option">
+              <div class="label">Nº de Recursos Calidad:</div>
+              <div class="value">
+                <div class="dx-field-value">
+                  <dx-number-box [value]="numRecursosCalidad" [readOnly]="true"></dx-number-box>
+                </div>
+              </div>
+            </div>
+          </div>
+            
+        </div>
+      </div>
+
+
+        <dx-gantt height="700" [taskListWidth]="500" [scaleType]="scaleType" [taskTitlePosition]="titlePosition"
+          [taskTooltipContentTemplate]="showCustomTaskTooltip ? 'taskTooltipContentTemplate' : undefined"
+          [taskTimeTooltipContentTemplate]="showCustomTaskTooltip ? 'taskTimeTooltipContentTemplate' : undefined"
+          [taskProgressTooltipContentTemplate]="showCustomTaskTooltip ? 'taskProgressTooltipContentTemplate' : undefined"
+          [startDateRange]="startDateRange" [endDateRange]="endDateRange">
+
+
+          <dxo-tasks [dataSource]="tasks"></dxo-tasks>
+
+          <dxi-column dataField="title" caption="Nombre" [width]="300"></dxi-column>
+          <dxi-column dataField="start" caption="Fecha inicio" dataType="date"></dxi-column>
+          <dxi-column dataField="end" caption="Fecha fin" dataType="date"></dxi-column>
+
+          <dxo-toolbar>
+            <dxi-item name="collapseAll"></dxi-item>
+            <dxi-item name="expandAll"></dxi-item>
+            <dxi-item name="separator"></dxi-item>
+            <dxi-item name="zoomIn"></dxi-item>
+            <dxi-item name="zoomOut"></dxi-item>
+          </dxo-toolbar>
+
+          <dxo-validation [autoUpdateParentTasks]="true"></dxo-validation>
+
+          <div *dxTemplate="let task of 'taskTooltipContentTemplate'" class="custom-task-edit-tooltip">
+
+            <div class="custom-tooltip-title">
+              {{ task.title }}
+            </div>
+
+            <div class="custom-tooltip-row">
+              <span> Estimación: </span>
+              {{ getTimeEstimate(task)}}
+              <span> horas </span>
+            </div>
+
+            <!-- <div class="custom-tooltip-row">
+              <span> Restantes: </span>
+                {{ getTimeLeft(task) }}
+              <span> horas </span>
+            </div> -->
+
+          </div>
+
+        </dx-gantt>

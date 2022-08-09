@@ -1,0 +1,467 @@
+{
+  "proyecto": [
+    {
+      "id": 1,
+      "codigo": "COD-ABSENTISMO",
+      "nombre": "ABSENTISMO",
+      "descripcion": "ABSENTISMO",
+      "progress": 100,
+      "start": "2022-06-30T22:00:00.000Z",
+      "configuracionId": 1
+    },
+    {
+      "id": 2,
+      "codigo": "COD-SEGURIDAD Y CLAVES ",
+      "nombre": "SEGURIDAD Y CLAVES DE ALARMA",
+      "descripcion": "COD-SEGURIDAD Y CLAVES DE ALARMA",
+      "progress": 100,
+      "start": "2022-08-06T22:00:00.000Z",
+      "configuracionId": 2
+    }
+  ],
+  "modulo": [
+    {
+      "id": 1,
+      "nombre": "MAESTROS",
+      "idProyecto": 1,
+      "descripcion": "MAESTROS",
+      "progress": 100,
+      "prioridad": 0
+    },
+    {
+      "id": 2,
+      "nombre": "CONSULTAS",
+      "idProyecto": 1,
+      "descripcion": "CONSULTAS",
+      "progress": 100,
+      "prioridad": 0
+    },
+    {
+      "id": 3,
+      "nombre": "LISTADOS",
+      "idProyecto": 1,
+      "descripcion": "LISTADOS",
+      "progress": 100,
+      "prioridad": 0
+    },
+    {
+      "id": 4,
+      "nombre": "MOVIMIENTOS",
+      "idProyecto": 2,
+      "descripcion": "MOVIMIENTOS",
+      "progress": 100,
+      "prioridad": 0
+    }
+  ],
+  "funcionalidad": [
+    {
+      "id": 1,
+      "nombre": "ESTRUCTURA DEPARTAMENTO",
+      "descripcion": "ESTRUCTURA DEPARTAMENTO",
+      "idModulo": 1,
+      "progress": 100
+    },
+    {
+      "id": 2,
+      "nombre": "CONSULTA ALTAS BAJAS MÉDICAS",
+      "descripcion": "CONSULTA ALTAS BAJAS MÉDICAS",
+      "idModulo": 2,
+      "progress": 100
+    },
+    {
+      "id": 3,
+      "nombre": "LISTADO BAJAS MÉDICAS",
+      "descripcion": "LISTADO BAJAS MÉDICAS",
+      "idModulo": 3,
+      "progress": 100
+    },
+    {
+      "id": 4,
+      "nombre": "RELACIÓN GESTORES TÉCNICOS",
+      "descripcion": "RELACIÓN GESTORES TÉCNICOS",
+      "idModulo": 1,
+      "progress": 100
+    },
+    {
+      "id": 5,
+      "nombre": "SEGUIMIENTO",
+      "descripcion": "SEGUIMIENTO",
+      "idModulo": 2,
+      "progress": 100
+    },
+    {
+      "id": 6,
+      "nombre": "LISTADO DE CENTROS",
+      "descripcion": "LISTADO DE CENTROS",
+      "idModulo": 3,
+      "progress": 100
+    },
+    {
+      "id": 7,
+      "nombre": "INVENTARIOS",
+      "descripcion": "INVENTARIOS",
+      "idModulo": 4,
+      "progress": 100
+    }
+  ],
+  "fase": [
+    {
+      "id": 1,
+      "nombre": "Overview"
+    },
+    {
+      "id": 2,
+      "nombre": "Análisis"
+    },
+    {
+      "id": 3,
+      "nombre": "Desarrollo"
+    },
+    {
+      "id": 4,
+      "nombre": "C. Inc. OT"
+    }
+  ],
+  "tarea": [
+    {
+      "id": 1,
+      "faseId": 1,
+      "nombre": "Sketches",
+      "numHoras": 1
+    },
+    {
+      "id": 2,
+      "faseId": 1,
+      "nombre": "Prototipos",
+      "numHoras": 2
+    },
+    {
+      "id": 3,
+      "faseId": 2,
+      "nombre": "Análisis",
+      "numHoras": 4
+    },
+    {
+      "id": 4,
+      "faseId": 2,
+      "nombre": "Funcional",
+      "numHoras": 2
+    },
+    {
+      "id": 5,
+      "faseId": 3,
+      "nombre": "Mantenimiento - Detalle",
+      "numHoras": 3,
+      "tipoDesarrollo": "FRONTEND"
+    },
+    {
+      "id": 6,
+      "faseId": 3,
+      "nombre": "Mantenimiento - Selectores",
+      "numHoras": 2,
+      "tipoDesarrollo": "FRONTEND"
+    },
+    {
+      "id": 7,
+      "faseId": 3,
+      "nombre": "Mantenimiento - Exportación/Importación",
+      "numHoras": 1,
+      "tipoDesarrollo": "FRONTEND"
+    },
+    {
+      "id": 8,
+      "faseId": 3,
+      "nombre": "Mantenimiento - Grid",
+      "numHoras": 3,
+      "tipoDesarrollo": "FRONTEND"
+    },
+    {
+      "id": 9,
+      "faseId": 3,
+      "nombre": "Mantenimiento - Otros componentes",
+      "numHoras": 2,
+      "tipoDesarrollo": "FRONTEND"
+    },
+    {
+      "id": 10,
+      "faseId": 3,
+      "nombre": "Mantenimiento - Grid en edición",
+      "numHoras": 3,
+      "tipoDesarrollo": "FRONTEND"
+    },
+    {
+      "id": 11,
+      "faseId": 3,
+      "nombre": "Mantenimiento - Acciones",
+      "numHoras": 3,
+      "tipoDesarrollo": "FRONTEND"
+    },
+    {
+      "id": 12,
+      "faseId": 3,
+      "nombre": "Filtros de búsqueda - Componente básico búsqueda",
+      "numHoras": 3,
+      "tipoDesarrollo": "FRONTEND"
+    },
+    {
+      "id": 13,
+      "faseId": 3,
+      "nombre": "Filtros de búsqueda - Selectores",
+      "numHoras": 2,
+      "tipoDesarrollo": "FRONTEND"
+    },
+    {
+      "id": 14,
+      "faseId": 3,
+      "nombre": "Filtros de búsqueda - Custom botones",
+      "numHoras": 2,
+      "tipoDesarrollo": "FRONTEND"
+    },
+    {
+      "id": 15,
+      "faseId": 3,
+      "nombre": "Filtros de búsqueda - Otros componentes",
+      "numHoras": 2,
+      "tipoDesarrollo": "FRONTEND"
+    },
+    {
+      "id": 16,
+      "faseId": 3,
+      "nombre": "Form - Selector",
+      "numHoras": 2,
+      "tipoDesarrollo": "FRONTEND"
+    },
+    {
+      "id": 17,
+      "faseId": 3,
+      "nombre": "Form - Grid",
+      "numHoras": 4,
+      "tipoDesarrollo": "FRONTEND"
+    },
+    {
+      "id": 18,
+      "faseId": 3,
+      "nombre": "Form - Exportación/Importación Grid",
+      "numHoras": 1,
+      "tipoDesarrollo": "FRONTEND"
+    },
+    {
+      "id": 19,
+      "faseId": 3,
+      "nombre": "Form - Custom botones en grid",
+      "numHoras": 3,
+      "tipoDesarrollo": "FRONTEND"
+    },
+    {
+      "id": 20,
+      "faseId": 3,
+      "nombre": "Form - Botones Custom",
+      "numHoras": 2,
+      "tipoDesarrollo": "FRONTEND"
+    },
+    {
+      "id": 21,
+      "faseId": 3,
+      "nombre": "Form - Componente básico formulario",
+      "numHoras": 6,
+      "tipoDesarrollo": "FRONTEND"
+    },
+    {
+      "id": 22,
+      "faseId": 3,
+      "nombre": "Misc - Pop up",
+      "numHoras": 4,
+      "tipoDesarrollo": "FRONTEND"
+    },
+    {
+      "id": 23,
+      "faseId": 3,
+      "nombre": "Misc - Wizard",
+      "numHoras": 2,
+      "tipoDesarrollo": "FRONTEND"
+    },
+    {
+      "id": 24,
+      "faseId": 3,
+      "nombre": "Misc - Steps",
+      "numHoras": 3,
+      "tipoDesarrollo": "FRONTEND"
+    },
+    {
+      "id": 25,
+      "faseId": 3,
+      "nombre": "Misc - Tabs",
+      "numHoras": 1,
+      "tipoDesarrollo": "FRONTEND"
+    },
+    {
+      "id": 26,
+      "faseId": 3,
+      "nombre": "Misc - Tab",
+      "numHoras": 2,
+      "tipoDesarrollo": "FRONTEND"
+    },
+    {
+      "id": 27,
+      "faseId": 3,
+      "nombre": "General - Generador crud",
+      "numHoras": 4,
+      "tipoDesarrollo": "BACKEND"
+    },
+    {
+      "id": 28,
+      "faseId": 3,
+      "nombre": "General -  Paginado remoto",
+      "numHoras": 8,
+      "tipoDesarrollo": "BACKEND"
+    },
+    {
+      "id": 29,
+      "faseId": 3,
+      "nombre": "Controladores - Otros endpoints",
+      "numHoras": 2,
+      "tipoDesarrollo": "BACKEND"
+    },
+    {
+      "id": 30,
+      "faseId": 3,
+      "nombre": "Servicios - Complejidad baja",
+      "numHoras": 2,
+      "tipoDesarrollo": "BACKEND"
+    },
+    {
+      "id": 31,
+      "faseId": 3,
+      "nombre": "Servicios - Complejidad media",
+      "numHoras": 4,
+      "tipoDesarrollo": "BACKEND"
+    },
+    {
+      "id": 32,
+      "faseId": 3,
+      "nombre": "Servicios - Complejidad alta",
+      "numHoras": 8,
+      "tipoDesarrollo": "BACKEND"
+    },
+    {
+      "id": 33,
+      "faseId": 3,
+      "nombre": "Tests unitarios - Complejidad baja",
+      "numHoras": 1,
+      "tipoDesarrollo": "BACKEND"
+    },
+    {
+      "id": 34,
+      "faseId": 3,
+      "nombre": "Tests unitarios - Complejidad media",
+      "numHoras": 2,
+      "tipoDesarrollo": "BACKEND"
+    },
+    {
+      "id": 35,
+      "faseId": 3,
+      "nombre": "Tests unitarios - Complejidad alta",
+      "numHoras": 4,
+      "tipoDesarrollo": "BACKEND"
+    },
+    {
+      "id": 36,
+      "faseId": 3,
+      "nombre": "Reports - Complejidad baja",
+      "numHoras": 4,
+      "tipoDesarrollo": "BACKEND"
+    },
+    {
+      "id": 37,
+      "faseId": 3,
+      "nombre": "Reports - Complejidad media",
+      "numHoras": 8,
+      "tipoDesarrollo": "BACKEND"
+    },
+    {
+      "id": 38,
+      "faseId": 3,
+      "nombre": "Reports - Complejidad alta",
+      "numHoras": 12,
+      "tipoDesarrollo": "BACKEND"
+    },
+    {
+      "id": 39,
+      "faseId": 4,
+      "nombre": "Calidad",
+      "numHoras": 26
+    }
+  ],
+  "funcionalidadTarea": [
+    {
+      "id": 4,
+      "funcionalidadId": 1,
+      "tareaId": 1,
+      "numTareas": 2
+    },
+    {
+      "id": 27,
+      "funcionalidadId": 7,
+      "tareaId": 1,
+      "numTareas": 2
+    },
+    {
+      "id": 28,
+      "funcionalidadId": 7,
+      "tareaId": 4,
+      "numTareas": 4
+    },
+    {
+      "id": 29,
+      "funcionalidadId": 7,
+      "tareaId": 5,
+      "numTareas": 3
+    },
+    {
+      "id": 30,
+      "funcionalidadId": 7,
+      "tareaId": 33,
+      "numTareas": 2
+    },
+    {
+      "id": 31,
+      "funcionalidadId": 7,
+      "tareaId": 39,
+      "numTareas": 1
+    }
+  ],
+  "configuracion": [
+    {
+      "id": 1,
+      "nombre": "c-proyecto001",
+      "jornadaHoras": 6.5,
+      "duracionSprint": 21,
+      "recursosAnalisis": 4,
+      "recursosDesarrollo": 8,
+      "recursosGestion": 6,
+      "recursosCalidad": 6,
+      "duracionSprintPlanning": 2,
+      "duracionSprintReview": 2,
+      "duracionRetrospectiva": 1,
+      "duracionDaily": 1,
+      "duracionSeguimientoSemanal": 2,
+      "duracionComiteOperativo": 2
+    },
+    {
+      "id": 2,
+      "nombre": "c-proyecto002",
+      "jornadaHoras": 6.5,
+      "duracionSprint": 21,
+      "recursosAnalisis": 4,
+      "recursosDesarrollo": 6,
+      "recursosGestion": 2,
+      "recursosCalidad": 8,
+      "duracionSprintPlanning": 3,
+      "duracionSprintReview": 4,
+      "duracionRetrospectiva": 3,
+      "duracionDaily": 3,
+      "duracionSeguimientoSemanal": 4,
+      "duracionComiteOperativo": 5
+    }
+  ]
+}

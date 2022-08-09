@@ -1,0 +1,20 @@
+<h2 class="content-block">Módulos</h2>
+
+<div class="content-block">
+  <div class="dx-card responsive-paddings">
+    <div id="data-grid-demo">
+      
+      <app-grid [datos]="modulos" 
+                [columnas]="columnas" 
+                [model]="modulo"
+                (emitInsertData)="logInsertEvent( $event )" 
+                (emitDeleteData)="logRemovingEvent( $event )"
+                (emitUpdateData)="logUpdatingEvent( $event )">
+    </app-grid>
+    
+  </div>
+</div>
+</div>
+
+<!-- <dx-toast [(visible)]="isVisible" [type]="type" [message]="message"></dx-toast>
+<app-alerts></app-alerts>  -->
